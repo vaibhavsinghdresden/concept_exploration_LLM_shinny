@@ -1,11 +1,8 @@
-from openai import AsyncOpenAI
 from openai import OpenAI
-import json
 import re
 
-
-def set_prompt(objects,frames,examples,implications="",premise=[],conclusion=[]):
-
+# Sets prompt for attribute exploration
+def set_prompt(objects, frames, examples, implications="", premise=[], conclusion=[]):
     if len(premise) == 0 and len(conclusion) == 0:
         implications = implications.split('=>')
         premise = [line.strip() for line in implications[0].split(',')]
@@ -56,7 +53,7 @@ Instructions:
 """
     conclusion_prompt_or = ' or '.join(f'"{word}"' for word in conclusion)
     prompt += f"\nOtherwise, return a verb that has all of the following meaning(s): {premise_prompt}, but does not have at least one of the following meaning(s): {conclusion_prompt_or}"
-    prompt +="""
+    prompt += """
 {
 "output": "NO",
 "verb": "<Language of the verb> : <name of the verb>",
@@ -64,13 +61,13 @@ Instructions:
 
     for premise in premise:
         prompt += f'"{premise}",'
-    prompt +=f'"<other meanings from the Word Meaning List, if any apply>"],\n'
+    prompt += f'"<other meanings from the Word Meaning List, if any apply>"],\n'
     prompt += '''"language": "<Give the language of the verb>"
 "explanation": "<Give a brief explanation of your result, and also describe the general meaning of the verb and also give from which language the verb is taken>"
 "example": "<Explain your results using some examples for all the meanings, in the same language of the verb>">}"
 '''
     prompt += """
-    
+
 Constraints:
 - Ensure the returned verb is not in the already checked list.
 - Use all the meanings from the list that applies to this word.
@@ -81,13 +78,14 @@ Respond with only a valid JSON object. Do not include markdown syntax (like trip
     return prompt
 
 
+# Sets prompt for object exploration
 def set_prompt_object(objects, frames, premise_verbs, conclusion_verbs):
     prompt = ""
     prompt += "We are analyzing word meanings for multilingual verbs using the framework of Formal Concept Analysis (FCA), with a focus on object exploration.\n\n"
 
     prompt += "Word Meanings List:\n"
     for i in range(len(frames)):
-        prompt += f'{i+1}. "{frames[i]}"\n'
+        prompt += f'{i + 1}. "{frames[i]}"\n'
 
     prompt += "\nVerbs List:\n"
     prompt += ', '.join(objects) + "\n\n"
@@ -99,7 +97,7 @@ def set_prompt_object(objects, frames, premise_verbs, conclusion_verbs):
     prompt += "Hypothesis to Test:\n"
     if len(premise_list) != 0:
         prompt += f'Every verb that shares all meanings of the verbs {premise_list} also shares all meanings of {conclusion_list}?\n\n'
-    else :
+    else:
         prompt += f'Every verb that shares all meanings of all the verbs in the list also shares all meanings of {conclusion_list}?\n\n'
         # f"Every verb that exhibits all the semantic features (meanings) common to verbs {premise_list}  must also exhibit all the semantic features shared by verbs {conclusion_list}.""""
 
@@ -119,9 +117,9 @@ def set_prompt_object(objects, frames, premise_verbs, conclusion_verbs):
 
     for premise in premise_verbs:
         prompt += f'"{premise}",'
-    prompt +=f'"<other verbs from the Verbs List the have this meaning>"],\n'
+    prompt += f'"<other verbs from the Verbs List the have this meaning>"],\n'
 
-    prompt +=f'"explanation": "<Brief explanation of why the meaning does not apply to all verbs>"'
+    prompt += f'"explanation": "<Brief explanation of why the meaning does not apply to all verbs>"'
     prompt += "\n"
     prompt += f'"example": "<Example sentences demonstrating the meaning>"'
     prompt += "}\n\n"
@@ -143,23 +141,14 @@ Respond with only a valid JSON object. Do not include markdown syntax (like trip
 
     return prompt
 
-def evaluate_prompt_auto(prompt):
-    pass
-
-def evaluate_prompt_chat(prompt):
-    pass
-
-def evaluate_prompt_chat_test(prompt):
-    pass
-
 def evaluate_prompt(prompt):
-    pass
+    
+    # Provide code to send this prompt to an LLM model
+    # Declare the clint object, for our experiments we used LLama3-80b and R1 models
+    
+    response = client.chat.completions.create(messages=prompt, model=model_name)
+    response_content = response.choices[0].message.content
+    return response_content
 
-if __name__ == "__main__":
-    eval = set_prompt(['abb','bbb','cbb','bbd'],['ebbb','bbf','bbg','bbh'],['eg1','eg2','eg3','eg4'],premise=["a","b"],conclusion=["c"])
-    # print(eval)
-    # eval_obj = set_prompt_object(objects=['abb','bbb','cbb','bbd'], frames=['ebbb','bbf','bbg','bbh'], premise_verbs=['123','456'], conclusion_verbs=['bcd','cdf'])
-    print(eval)
-    # evaluate_prompt("Tell me a joke")
 
 
