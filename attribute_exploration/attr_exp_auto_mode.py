@@ -1,4 +1,6 @@
 from shiny import App, reactive, render, ui, module
+from eval_prompt import set_prompt, evaluate_prompt
+import json
 
 @module.ui
 def attr_exp_auto_mode_ui():
@@ -121,7 +123,7 @@ def attr_exp_auto_mode_server(input, output, session, cxt, trigger_recalc):
                 if set_prompts[-1]["role"] != "user":
                     set_prompts.append({"role": "user", "content": prompt})
 
-                result_str = evaluate_prompt_auto(set_prompts)
+                result_str = evaluate_prompt(set_prompts)
                 set_prompts.append({"role": "assistant", "content": result_str})
 
                 try:
