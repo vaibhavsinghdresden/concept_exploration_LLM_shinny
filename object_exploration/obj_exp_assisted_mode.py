@@ -1,4 +1,6 @@
 from shiny import App, reactive, render, ui, module
+from eval_prompt import set_prompt, evaluate_prompt
+import json
 
 @module.ui
 def obj_exp_assisted_mode_ui():
@@ -150,13 +152,21 @@ def obj_exp_assisted_mode_server(input, output, session, cxt, trigger_recalc, se
             set_prompts = prompt_body_state_object.get()
             set_prompts.append({"role": "user", "content": prompt})
 
-            result_str, result = evaluate_prompt_chat(set_prompts)
+            try :
+                result_str = evaluate_prompt(set_prompts)
+                result = json.loads(result_str)
+
+            except json.decoder.JSONDecodeError as e:
+                result = json.dumps({"output": "INVALID"})
+                return
+
 
             set_prompts.append({"role": "assistant", "content": result_str})
             prompt_body_state_object.set(set_prompts)
 
-            current_implication = context.Basic_Exploration.get_current_object_implications(selected_obj_index.get())
+            models_response_state_object.set(result)
 
+            current_implication = context.Basic_Exploration.get_current_object_implications(selected_obj_index.get())
             implication_message_assisted_state_object.set(
                 ui.accordion(
                     ui.accordion_panel("Chat with the agent",
@@ -180,9 +190,6 @@ def obj_exp_assisted_mode_server(input, output, session, cxt, trigger_recalc, se
                     open=False,
                 ),
             )
-
-            result = evaluate_prompt(prompt)
-            models_response_state_object.set(result)
         else:
             models_response_state_object.set(None)
 
@@ -196,10 +203,14 @@ def obj_exp_assisted_mode_server(input, output, session, cxt, trigger_recalc, se
 
             set_prompts = prompt_body_state_object.get()
             add_on_prompt = ""
-            if "format" in input_chat:
-                add_on_prompt = " and don't respond with a json object from now on, until asked"
+
+            if "format" not in input_chat:
+                add_on_prompt = " and don't respond with a json object"
+
             set_prompts.append({"role": "user", "content": f"{input_chat},{add_on_prompt}"})
-            result_str = evaluate_prompt_chat_test(set_prompts)
+
+            result_str = evaluate_prompt(set_prompts)
+
             set_prompts.append({"role": "assistant", "content": result_str})
             prompt_body_state_object.set(set_prompts)
 
@@ -207,12 +218,11 @@ def obj_exp_assisted_mode_server(input, output, session, cxt, trigger_recalc, se
                 try:
                     response_json = json.loads(result_str)
                     models_response_state_object.set(response_json)
-                    print("this may be a solution")
-                except Exception as e:
-                    print(e)
 
-            message = result_str
-            await chat_obj.append_message(message)
+                except json.decoder.JSONDecodeError as e:
+                    result_str = "I am having some issue, generating the json object, you can try again later"
+
+            await chat_obj.append_message(result_str)
 
     @reactive.effect
     @reactive.event(input.reject_model_response_object)
@@ -245,22 +255,26 @@ def obj_exp_assisted_mode_server(input, output, session, cxt, trigger_recalc, se
 
                 if out[0] == "FAIL":
                     a = "Previous Model Response is invalid, Please generate model response again."
-                    b = ui.div(
+                    msg = ui.div(
                         ui.h6(f'{a}', style="color: Red; text-align: center; font-weight: bold;"),
                         ui.h6(f'{out[1]}', style="color: Red; text-align: center; font-weight: bold;")
                     )
-                    implication_message_assisted_state_object.set(b)
+                    implication_message_assisted_state_object.set(msg)
 
                 implication_message_assisted_state_object.set(b)
                 models_response_state_object.set(None)
-            else:
+            elif model_response['output'] == "YES":
                 trigger_recalc.set(trigger_recalc.get() + 1)
                 context = cxt.get()
                 context.Basic_Exploration.post_confirm_object_implications(selected_obj_index.get())
                 a = "Previous Model Response Confirmed, Implication confirmed."
-                b = ui.h6(f'{a}', style="color: Blue; text-align: center; font-weight: bold;")
-                implication_message_assisted_state_object.set(b)
+                msg = ui.h6(f'{a}', style="color: Blue; text-align: center; font-weight: bold;")
+                implication_message_assisted_state_object.set(msg)
                 models_response_state_object.set(None)
+            else:
+                msg = ui.h6(f'Previous Model Response is invalid, Please generate model response again.',
+                            style="color: Red; text-align: center; font-weight: bold;")
+                implication_message_assisted_state_object.set(msg)
         else:
             implication_message_assisted_state_object.set("")
 
