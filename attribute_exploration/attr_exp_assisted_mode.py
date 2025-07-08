@@ -1,5 +1,6 @@
 from shiny import App, reactive, render, ui, module
-from eval_prompt import set_prompt, evaluate_prompt_chat, evaluate_prompt_chat_test
+from eval_prompt import set_prompt, evaluate_prompt
+import json
 
 @module.ui
 def attr_exp_assisted_mode_ui():
@@ -75,15 +76,14 @@ def attr_exp_assisted_mode_server(input, output, session, cxt, trigger_recalc, s
     @output
     @render.ui
     def model_response_output_assisted_mode():
-        model_response = models_response_state.get()
-        if model_response is not None:
-            result = model_response
+        result = models_response_state.get()
+        if result is not None:
             if result['output'] == "YES":
                 return ui.card(
-                    ui.h5(f"Agents's Response:"),
+                    ui.h6(f"Agents's Response:"),
                     ui.div(f"The agent say's the implication is valid"),
                 )
-            else:
+            elif result['output'] == "NO":
                 return ui.div(
                     ui.h6("Agent's Response:", style="font-weight: bold; margin-bottom: 4px;"),
                     ui.HTML(
@@ -97,6 +97,10 @@ def attr_exp_assisted_mode_server(input, output, session, cxt, trigger_recalc, s
                     ui.HTML(
                         f"<div style='margin-bottom: 0px; margin-top:20px'><em>Example given by the Agent: {result['example']}</em></div>"),
                     style="text-align: center;"
+                )
+            else:
+                return ui.div(
+                    ui.h6("Agent's provided a invalid response, Please try again", style="font-weight: bold; margin-bottom: 4px;"),
                 )
         else:
             return ui.div("")
@@ -153,14 +157,21 @@ def attr_exp_assisted_mode_server(input, output, session, cxt, trigger_recalc, s
             set_prompts = prompt_body_state.get()
             set_prompts.append({"role": "user", "content": prompt})
 
-            result_str, result = evaluate_prompt_chat(set_prompts)
+            try :
+                result_str = evaluate_prompt(set_prompts)
+                result = json.loads(result_str)
+
+            except json.decoder.JSONDecodeError as e:
+                result = json.dumps({"output": "INVALID"})
+                return
+
 
             set_prompts.append({"role": "assistant", "content": result_str})
             prompt_body_state.set(set_prompts)
 
             models_response_state.set(result)
-            current_implication = context.Basic_Exploration.get_current_implications(selected_attr_index.get())
 
+            current_implication = context.Basic_Exploration.get_current_implications(selected_attr_index.get())
             implication_message_assisted_mode.set(
                 ui.accordion(
                     ui.accordion_panel("Chat with the agent",
@@ -201,7 +212,7 @@ def attr_exp_assisted_mode_server(input, output, session, cxt, trigger_recalc, s
                 add_on_prompt = " and don't respond with a json object"
 
             set_prompts.append({"role": "user", "content": f"{model_input},{add_on_prompt}"})
-            result_str = evaluate_prompt_chat_test(set_prompts)
+            result_str = evaluate_prompt(set_prompts)
 
             if "output" in result_str:
                 try:
@@ -250,13 +261,18 @@ def attr_exp_assisted_mode_server(input, output, session, cxt, trigger_recalc, s
                     implication_message_assisted_mode.set(msg)
 
                 models_response_state.set(None)
-            else:
+            elif model_response['output'] == "YES":
                 trigger_recalc.set(trigger_recalc.get() + 1)
                 context = cxt.get()
                 context.Basic_Exploration.post_confirm_implications(selected_attr_index.get())
                 msg = ui.h6(f'Previous Model Response Confirmed, Implication confirmed.', style="color: Blue; text-align: center; font-weight: bold;")
                 implication_message_assisted_mode.set(msg)
                 models_response_state.set(None)
+            else:
+                msg = ui.h6(f'Previous Model Response is invalid, Please generate model response again.',
+                            style="color: Red; text-align: center; font-weight: bold;")
+                implication_message_assisted_mode.set(msg)
+
         else:
             implication_message_assisted_mode.set("")
 
