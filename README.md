@@ -7,7 +7,9 @@ This project is currently under active development and is being supervised by [D
 
 ### Formal Context
 
-A **formal context** in FCA is a triple: 
+Think of this as a simple table showing "what has what" - like a spreadsheet where rows are objects, columns are attributes, and checkmarks shows that this specific attribute is present in that object.
+
+formally, A **formal context** in FCA is a triple: 
 
 K = (G, M, I)
 
@@ -16,6 +18,16 @@ Where:
 - **M** is a set of **attributes**
 - **I** is a binary relation (subset of G × M) indicating which object has which attribute  
   (i.e., (g, m) ∈ I means object *g* has attribute *m*)
+
+For example that this formal concept which shows 
+
+|        Object        | Female | Male | Juvenile | Adult |
+|:--------------------:|:------:|:----:|:--------:|:-----:|
+| **girl**             |   ✔️   |      |    ✔️    |       |
+| **woman**            |   ✔️   |      |          |  ✔️   |
+| **boy**              |        |  ✔️  |    ✔️    |       |
+| **man**              |        |  ✔️  |          |  ✔️   |
+
 
 ### Formal Concepts
 
