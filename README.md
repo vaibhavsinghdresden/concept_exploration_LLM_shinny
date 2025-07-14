@@ -259,7 +259,7 @@ Object exploration shares the same UI features as attribute exploration. The key
 
 <img width="1582" height="961" alt="Screenshot 2025-07-15 at 1 00 20 AM" src="https://github.com/user-attachments/assets/4e481f77-feff-4ee1-96bb-6b0d3c93015f" />
 
-### 4.3 Exports
+### 4.4 Exports
 
 The context can be exported by the user at any time, either in **CXT format** or as a **CSV dataframe**, using the two button at the buttom right corner of the page.
 
