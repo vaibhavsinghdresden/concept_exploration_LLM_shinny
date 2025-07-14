@@ -245,9 +245,9 @@ If the user selects the **Chat** option, they can engage with the model by askin
 
 #### 4.2.3 Auto Mode
 
-In this mode, the system prompts the user to input a **system prompt**, which can include instructions such as specifying which languages the counterexamples should include or exclude. It also asks for the number of implications to be validated before the system terminates.  
+In this mode, the system prompts the user to input a **system prompt**, which can include instructions such as specifying which languages the counterexamples should include or exclude. It also asks for the number of implications to be validated before the system terminates.
 
-Once the process completes, the system displays logs detailing all the actions taken for each implication during the validation process.
+The process terminates when either there are no more implications to process or the number of implications specified by the user is reached. Once complete, the system displays logs detailing all actions taken for each implication during the validation process.
 
 <img width="1470" height="919" alt="Screenshot 2025-07-15 at 12 37 40 AM" src="https://github.com/user-attachments/assets/7362c04f-19ef-49b7-9bbc-9b9a04c51fc1" />
 
