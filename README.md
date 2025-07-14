@@ -12,11 +12,9 @@ A **formal context** in FCA is a triple:
 K = (G, M, I)
 
 Where:
-> **G** is a set of **objects**
-
-> **M** is a set of **attributes**
-
-> **I** is a binary relation (subset of G × M) indicating which object has which attribute  
+- **G** is a set of **objects**
+- **M** is a set of **attributes**
+- **I** is a binary relation (subset of G × M) indicating which object has which attribute  
   (i.e., (g, m) ∈ I means object *g* has attribute *m*)
 
 ### Formal Concepts
@@ -26,9 +24,8 @@ A **formal concept** is a pair:
 (A, B)
 
 Where:
-> **A** ⊆ G is the **extent** (the set of objects sharing the attributes in B)
-
-> **B** ⊆ M is the **intent** (the set of attributes common to all objects in A)
+- **A** ⊆ G is the **extent** (the set of objects sharing the attributes in B)
+- **B** ⊆ M is the **intent** (the set of attributes common to all objects in A)
 
 These satisfy the following conditions:
 
