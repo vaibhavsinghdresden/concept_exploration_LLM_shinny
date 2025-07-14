@@ -30,8 +30,11 @@ For example concider the below formal concept which epresents a classification o
 
 
 This formal context represents a small set of **person categories** based on their **gender** and **age group**.
+
 In this context the **Objects** are `girl`, `woman`, `boy`, `man`
+
 and the **Attributes** are `female`, `male`, `juvenile`, `adult`
+
 Each object is described by the attributes that apply to it, like A **girl** is **female** and **juvenile**
 
 This setup defines a simple logical structure where each object can be classified by its gender and age. It allows us to explore patterns and relationships—like grouping all **juveniles**, all **females**, or all **adults**—based on shared attributes.
