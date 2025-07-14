@@ -1,6 +1,54 @@
 # LLM-Enhanced Formal Concept Analysis: A Novel Approach to Semantic Mapping and Knowledge Discovery
 This project is currently under active development and is being supervised by [Dr. Sergei Obiedkov](https://iccl.inf.tu-dresden.de/web/Sergei_Obiedkov/en)
 
+## 1. Project Overview
+
+### 1.1 Objective
+
+The goal is to analyze linguistic data (e.g., cross-linguistic meanings and lexical groupings) using FCA and then **verify the resulting implications** through LLMs. These implications capture logical patterns such as:
+
+- **Attribute implications**:  
+  > If a verb expresses meanings A and B, then it also expresses C.
+
+- **Object implications**:  
+  > If meanings A and B co-occur in certain lexical items, they also appear in others.
+
+The system supports exploration and verification of **both types**, giving users full control over how they interrogate the conceptual structure of the data.
+
+### 1.2 Methodology
+
+The project follows a two-step process:
+
+1. **Formal Concept Analysis** is applied to lexical typology data to generate a set of implications (attribute-based and object-based).
+2. These implications are then validated by a **Large Language Model**, with support for various user interaction modes.
+
+### 1.3 Validation Modes
+
+Three verification modes have been developed, each suited to different levels of automation:
+
+#### 1.3.1 Manual Mode
+- The user manually validates each implication using their own linguistic knowledge.
+- Ideal for experts seeking precise control.
+
+#### 1.3.2 Assisted Mode
+- The LLM provides proposed answers and justifications.
+- Users can **interactively chat** with the system:
+  - Ask follow-up questions
+  - Challenge the model
+  - Refine or explore counterexamples
+- Useful for guided, collaborative research.
+
+#### 1.3.3 Automated Mode
+- Operates with minimal user input.
+- Automatically validates implications until:
+  - All implications are resolved, or
+  - A user-defined limit (e.g., *X* implications) is reached.
+- Suitable for large-scale or batch validation tasks.
+
+
+By combining **formal logic from FCA** with the **reasoning abilities of LLMs**, this system offers a powerful toolkit for scalable, explainable, and interactive analysis of semantic structure in language data—supporting both **attribute** and **object exploration** modes.
+
+
 ## 1. Background: Formal Concept Analysis (FCA)
 
 **Formal Concept Analysis (FCA)** is a mathematical framework for data analysis that focuses on identifying and visualizing relationships between a set of **objects** and a set of **attributes**. Developed by Rudolf Wille in the early 1980s, FCA is grounded in **lattice theory** and is widely used in knowledge representation, data mining, and ontology engineering.
