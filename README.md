@@ -66,7 +66,7 @@ For our example we get the below lattice daigram
 
 <img width="296" height="246" alt="Screenshot 2025-07-14 at 11 14 11 PM" src="https://github.com/user-attachments/assets/275c7df2-b9b0-4909-87fa-ac709e3ca703" />
 
-### 1.3 Attribute Implications
+### 1.3 Attribute Implications and Attribute exploration 
 
 An **attribute implication** is a rule of the form:
 
@@ -78,6 +78,7 @@ Where X, Y ⊆ M. This means:
 
 These implications capture dependencies between attributes and can be used for reasoning and data compression. FCA provides tools to compute a minimal (canonical) set of such implications, known as the **Duquenne–Guigues basis**.
 
+**Attribute Exploration** is a procedure in which we ask a expert is this implication 𝑋 → 𝑌 valid? The expert then has two options. Either, the expert accepts 𝑋 → 𝑌 as a valid implication in the domain, or, he refutes the implication. In the latter case the expert is obliged to present a counter example in the “language” of the domain, i.e., an object described by the attributes from 𝑀 (initial context).
 
 ### 1.4 Object Implications
 
@@ -90,6 +91,8 @@ Where A, B ⊆ G. This means:
 > If all objects in A share certain attributes, then the same holds for objects in B.
 
 While analogous to attribute implications, object implications are mainly explored in theoretical extensions of FCA.
+
+> **Object Exploration** is also done in a similar manner as the attribute exploration .
 
 
 
