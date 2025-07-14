@@ -5,7 +5,7 @@ This project is currently under active development and is being supervised by [D
 
 ### 1.1. Objective 
 
-The first goal is to analyze linguistic data (e.g., cross-linguistic meanings and lexical groupings) using FCA and then **verify the resulting implications** through LLMs. These implications capture logical patterns such as:
+The primary goal is to analyze linguistic data (e.g., cross-linguistic meanings and lexical groupings) using FCA and then **verify the resulting implications** through LLMs. These implications capture logical patterns such as:
 
 - **Attribute implications**:  
   > If a verb expresses meanings A and B, then it also expresses C.
@@ -252,6 +252,12 @@ In this mode, the system prompts the user to input a **system prompt**, which ca
 The process terminates when either there are no more implications to process or the number of implications specified by the user is reached. Once complete, the system displays logs detailing all actions taken for each implication during the validation process.
 
 <img width="1470" height="919" alt="Screenshot 2025-07-15 at 12 37 40 AM" src="https://github.com/user-attachments/assets/7362c04f-19ef-49b7-9bbc-9b9a04c51fc1" />
+
+## Exports
+
+The context can be exported by the user at any time, either in **CXT format** or as a **CSV dataframe**, using the two button at the buttom right corner of the page.
+
+<img width="1582" height="961" alt="Screenshot 2025-07-15 at 12 54 56 AM" src="https://github.com/user-attachments/assets/1d0d5502-9fb9-48a5-9952-32f46c318ae1" />
 
 
 
