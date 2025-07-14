@@ -13,7 +13,9 @@ K = (G, M, I)
 
 Where:
 > **G** is a set of **objects**
+> 
 > **M** is a set of **attributes**
+>
 > **I** is a binary relation (subset of G × M) indicating which object has which attribute  
   (i.e., (g, m) ∈ I means object *g* has attribute *m*)
 
