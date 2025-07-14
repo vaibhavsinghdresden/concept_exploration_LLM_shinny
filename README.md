@@ -28,6 +28,7 @@ For example concider the below formal concept which represents a small set of **
 | **boy**              |        |  ✔️  |    ✔️    |       |
 | **man**              |        |  ✔️  |          |  ✔️   |
 
+^Taken from [upriss.github.io](https://upriss.github.io/fca/fcaintro.html)
 
 In this context the **Objects** are `girl`, `woman`, `boy`, `man` and the **Attributes** are `female`, `male`, `juvenile`, `adult`. Each object is described by the attributes that apply to it, like A **girl** is **female** and **juvenile**
 
@@ -50,20 +51,26 @@ A = { g ∈ G | ∀ m ∈ B: (g, m) ∈ I }
 
 B = { m ∈ M | ∀ g ∈ A: (g, m) ∈ I }
 
+From our context, below are some formal concepts can be derived:
 
-Formal concepts form a **concept lattice**, which reveals hierarchical relationships among concepts.
+1. **({girl}, {female, juvenile})**  
+2. **({woman}, {female, adult})**  
+3. **({boy}, {male, juvenile})**  
+4. **({man}, {male, adult})**  
 
-Example: 
-An example of a formal context and a concept lattice taken from [upriss.github.io](https://upriss.github.io/fca/fcaintro.html)
+These concepts form the building blocks of the **concept lattice**, which organizes them hierarchically based on shared attributes and object groupings.
 
-<img width="381" height="472" alt="Screenshot 2025-07-14 at 10 43 31 PM" src="https://github.com/user-attachments/assets/c29b985a-2bab-4c02-a48b-a16a6c0d7b7b" />
+These formal concepts form a **concept lattice**, which reveals hierarchical relationships among concepts.
+
+For our example we get the below lattice daigram
+
+<img width="296" height="246" alt="Screenshot 2025-07-14 at 11 14 11 PM" src="https://github.com/user-attachments/assets/275c7df2-b9b0-4909-87fa-ac709e3ca703" />
 
 ### 1.3 Attribute Implications
 
 An **attribute implication** is a rule of the form:
 
 X → Y
-
 
 Where X, Y ⊆ M. This means:
 
