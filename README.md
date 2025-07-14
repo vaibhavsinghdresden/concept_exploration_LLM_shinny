@@ -173,7 +173,18 @@ A sample of the actual data used in our analysis is shown below.
 
 <img width="785" height="436" alt="Screenshot 2025-07-14 at 11 42 28 PM" src="https://github.com/user-attachments/assets/916fa77d-5c49-4d80-b599-103bb7ff520b" />
 
-## 4. UI Screenshots
+## 4. Tools and framewords used:
+- **[Shiny for Python](https://shiny.posit.co/py/)**  
+  Shiny is a framework for building interactive web applications in Python. It allows you to create rich, reactive user interfaces entirely in Python, without needing to write JavaScript. In this project, Shiny powers the frontend UI and handles user interactions, data uploads, and real-time updates.
+
+- **[OpenAI API](https://platform.openai.com/)**  
+  The OpenAI API is used to integrate AI-driven functionality, such as natural language processing or decision support. In this application, we use the API to send our formatted prompts and receive answers, helping enhance the analysis process.
+
+- **[FCATNG Library](https://pypi.org/project/fcatng/)**  
+  FCATNG (Formal Concept Analysis Tools – Next Generation) is a Python library for performing **Formal Concept Analysis (FCA)**. It supports working with contexts, implications, concept lattices, and attribute exploration. This library forms the core of the application's logical engine, enabling implication generation, validation, and management of formal contexts.
+
+
+## 4. System Overview
 
 ### 4.1. File Upload Page
 
@@ -190,16 +201,21 @@ The user can also select using the slider which rows and columns to use for anal
 ### 4.2. Attribute Exploration
 
 #### 4.2.1 Manual Mode
-At first the system shows a implication (which can be selected from the right hand side, but shows the first implication by default)
+
+When the system first loads, it automatically displays the first available implication by default. Users can browse and select other implications from a list on the right-hand side of the screen. Selecting a different implication updates the view dynamically to reflect the chosen data.
+
 <img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 57 48 PM" src="https://github.com/user-attachments/assets/5962575e-1c57-41b1-aa91-f92e974c0db8" />
 
-If user confirmed implication it will be added to the confirmed implication section on the right hand side
+When a user confirms an implication, it is added to the Confirmed Implications section located on the right-hand side of the screen. This section provides a running list of all implications the user has reviewed and approved, helping track progress and decisions during the analysis.
 
 <img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 59 23 PM" src="https://github.com/user-attachments/assets/4526c904-eeb1-44ac-ba1c-923650a23632" />
 
-If the user rejects the implication, the system asks for a counter example, if the counter example is a valid counter example then the object will be added to the context else the relevant exception will be shown by the system
+if a user rejects an implication, the system prompts them to provide a counterexample. This counterexample is then validated by the system:
+- If the counterexample is valid, it is added as a new object to the formal context.
+- If the counterexample is invalid, the system displays a relevant error message indicating why it was not accepted.
 
 <img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 58 02 PM" src="https://github.com/user-attachments/assets/677fa2df-d254-4077-9316-ed2de6328b94" />
+<img width="1582" height="961" alt="Screenshot 2025-07-15 at 12 07 09 AM" src="https://github.com/user-attachments/assets/dd606df2-f521-4d7f-975b-38f8a5f0e080" />
 
 #### 4.2.2 Assisted Mode
 
