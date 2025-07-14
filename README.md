@@ -218,6 +218,26 @@ if a user rejects an implication, the system prompts them to provide a counterex
 
 #### 4.2.2 Assisted Mode
 
+When the system first loads in assisted mode, it displays an “Ask the Model” button. When the user clicks this button, the system sends a prompt containing all relevant information about the context, the current implication, and other constraints to the LLM model. The model’s response is then displayed to the user.
+
+<img width="1582" height="961" alt="Screenshot 2025-07-15 at 12 16 08 AM" src="https://github.com/user-attachments/assets/c1d0ce88-3200-4cad-9129-824639eb4218" />
+
+The system then gives the user several options:
+
+1. Confirm the response from the model
+1.1 If the model's response was that the implication is valid, then the implication will be added to confirmed implication section.
+1.2 If the model’s response includes a valid counterexample, it will be added to the context.
+1.3 If the counterexample is invalid, the system will notify the user.
+2. Provide manual input, which functions the same as in manual mode.
+3. Chat with the model for further interaction.
+4. View the prompt that was sent to the model.
+
+<img width="1470" height="919" alt="Screenshot 2025-07-15 at 12 19 13 AM" src="https://github.com/user-attachments/assets/44a0ce92-5f23-4ead-ac8c-52e48fb952c1" />
+
+
+
+
+
 #### 4.2.3 Auto Mode
 
 
