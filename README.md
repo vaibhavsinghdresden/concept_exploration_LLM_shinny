@@ -48,8 +48,6 @@ Three verification modes have been developed, each suited to different levels of
 
 By combining **formal logic from FCA** with the **reasoning abilities of LLMs**, this system offers a powerful toolkit for scalable, explainable, and interactive analysis of semantic structure in language data—supporting both **attribute** and **object exploration** modes.
 
----
-
 ## 2. Background: Formal Concept Analysis (FCA)
 
 **Formal Concept Analysis (FCA)** is a mathematical framework for data analysis that focuses on identifying and visualizing relationships between a set of **objects** and a set of **attributes**. Developed by Rudolf Wille in the early 1980s, FCA is grounded in **lattice theory** and is widely used in knowledge representation, data mining, and ontology engineering.
