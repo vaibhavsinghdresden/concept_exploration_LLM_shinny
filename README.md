@@ -21,6 +21,34 @@ Where:
 
 A **formal concept** is a pair:
 
+(A, B)
+
+
+Where:
+- **A** ⊆ G is the **extent** (the set of objects sharing the attributes in B)
+- **B** ⊆ M is the **intent** (the set of attributes common to all objects in A)
+
+These satisfy the following conditions:
+
+A = { g ∈ G | ∀ m ∈ B: (g, m) ∈ I }
+B = { m ∈ M | ∀ g ∈ A: (g, m) ∈ I }
+
+
+Formal concepts form a **concept lattice**, which reveals hierarchical relationships among concepts.
+
+Example: 
+An example of a formal context and a concept lattice taken from [upriss.github.io](https://upriss.github.io/fca/fcaintro.html)
+
+<img width="381" height="472" alt="Screenshot 2025-07-14 at 10 43 31 PM" src="https://github.com/user-attachments/assets/c29b985a-2bab-4c02-a48b-a16a6c0d7b7b" />
+
+
+
+### Attribute Implications
+
+An **attribute implication** is a rule of the form:
+
+
+
 
 
 
