@@ -95,6 +95,39 @@ While analogous to attribute implications, object implications are mainly explor
 > **Object Exploration** is also done in a similar manner as the attribute exploration .
 
 
+## 2. Data Description: Lexical Typology
+
+The dataset used in this project comes from the field of **Lexical Typology**, a branch of linguistic typology that studies how different languages categorize and lexicalize concepts across the **semantic space**.
+
+### 2.1 Context
+
+While:
+- **Phonological typology** focuses on the sound systems (phonemes) of languages
+- **Grammatical typology** deals with morphological patterns and word forms
+
+**Lexical typology** explores **how languages structure word meanings**, especially how they split or merge conceptual domains.
+
+### 2.2 Example: The Word *Thick*
+
+In English, the adjective *thick* can describe:
+- Dimensional size (e.g., *thick wall*, *thick stick*)
+- Substance consistency (e.g., *thick porridge*)
+
+However, in Russian, these meanings are split between two distinct words:
+- **толстый (*tolstyj*)**: for dimensional size (*толстая стена* – thick wall)
+- **густой (*gustoj*)**: for consistency (*густая каша* – thick porridge)
+
+This demonstrates how **semantic domains** are divided differently across languages.
+
+### 2.3 Application in Formal Concept Analysis (FCA)
+
+This project applies **Formal Concept Analysis** to analyze and model:
+- The relationships between **lexical items (objects)** and **semantic components (attributes)**
+- The structure of **cross-linguistic meaning patterns**
+- We build **concept lattices** showing how meanings group or diverge in different languages
+
+
+
 
 
 
