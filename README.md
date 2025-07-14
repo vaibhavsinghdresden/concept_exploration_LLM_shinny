@@ -23,7 +23,6 @@ A **formal concept** is a pair:
 
 (A, B)
 
-
 Where:
 - **A** ⊆ G is the **extent** (the set of objects sharing the attributes in B)
 - **B** ⊆ M is the **intent** (the set of attributes common to all objects in A)
@@ -41,11 +40,33 @@ An example of a formal context and a concept lattice taken from [upriss.github.i
 
 <img width="381" height="472" alt="Screenshot 2025-07-14 at 10 43 31 PM" src="https://github.com/user-attachments/assets/c29b985a-2bab-4c02-a48b-a16a6c0d7b7b" />
 
-
-
 ### Attribute Implications
 
 An **attribute implication** is a rule of the form:
+
+X → Y
+
+
+Where X, Y ⊆ M. This means:
+
+> If an object has all the attributes in set X, then it also has all the attributes in set Y.
+
+These implications capture dependencies between attributes and can be used for reasoning and data compression. FCA provides tools to compute a minimal (canonical) set of such implications, known as the **Duquenne–Guigues basis**.
+
+---
+
+### Object Implications
+
+**Object implications** are less commonly used and arise in the **dual** setting of FCA:
+
+A → B
+
+Where A, B ⊆ G. This means:
+
+> If all objects in A share certain attributes, then the same holds for objects in B.
+
+While analogous to attribute implications, object implications are mainly explored in theoretical extensions of FCA.
+
 
 
 
