@@ -1,1 +1,1 @@
-# LLM-Enhanced Formal Concept Analysis: A Novel Approach to Semantic Mapping and Knowledge Discovery
+# LLM-Enhanced Concept Exploration: A Novel Approach to Semantic Mapping and Knowledge Discovery
