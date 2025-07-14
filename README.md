@@ -1,5 +1,5 @@
 # LLM-Enhanced Formal Concept Analysis: A Novel Approach to Semantic Mapping and Knowledge Discovery
-This project is currently under active development and is being supervised by of [Dr. Sergei Obiedkov](https://iccl.inf.tu-dresden.de/web/Sergei_Obiedkov/en)
+This project is currently under active development and is being supervised by [Dr. Sergei Obiedkov](https://iccl.inf.tu-dresden.de/web/Sergei_Obiedkov/en)
 
 ## Background: Formal Concept Analysis (FCA)
 
@@ -7,7 +7,8 @@ This project is currently under active development and is being supervised by of
 
 ### Formal Context
 
-A **formal context** in FCA is a triple:
+A **formal context** in FCA is a triple: 
+
 K = (G, M, I)
 
 Where:
