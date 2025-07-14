@@ -180,9 +180,8 @@ A sample of the actual data used in our analysis is shown below.
 - **[OpenAI API](https://platform.openai.com/)**  
   The OpenAI API is used to integrate AI-driven functionality, such as natural language processing or decision support. In this application, we use the API to send our formatted prompts and receive answers, helping enhance the analysis process.
 
-- **[FCATNG Library](https://pypi.org/project/fcatng/)**  
+- **[FCATNG Library](https://github.com/tomhanika/fcatng)**  
   FCATNG (Formal Concept Analysis Tools – Next Generation) is a Python library for performing **Formal Concept Analysis (FCA)**. It supports working with contexts, implications, concept lattices, and attribute exploration. This library forms the core of the application's logical engine, enabling implication generation, validation, and management of formal contexts.
-
 
 ## 4. System Overview
 
