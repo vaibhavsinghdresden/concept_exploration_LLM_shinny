@@ -176,13 +176,14 @@ A sample of the actual data used in our analysis is shown below.
 ## 4. UI Screenshots
 
 ### 4.1. File Upload Page
-<img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 49 56 PM" src="https://github.com/user-attachments/assets/8d3fb5a3-2751-4a77-8bb7-f6d3babefb33" />
 
 The initial screen allows users to upload their context files to the system. Supported formats include Excel (.xlsx), CSV (.csv), and CXT (.cxt). Users can select a file from their device, which the system then processes for further analysis. 
 
-<img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 57 09 PM" src="https://github.com/user-attachments/assets/c3cdd222-f9fd-4ed2-9ad6-ece33075eda7" />
+<img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 49 56 PM" src="https://github.com/user-attachments/assets/8d3fb5a3-2751-4a77-8bb7-f6d3babefb33" />
 
-The user can also select the number of rows and columns that should be used for analysis.
+The user can also select using the slider which rows and columns to use for analysis.
+
+<img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 57 09 PM" src="https://github.com/user-attachments/assets/c3cdd222-f9fd-4ed2-9ad6-ece33075eda7" />
 
 ### After the initial file upload, user can then select among attribute exploration or object exploration.
 
