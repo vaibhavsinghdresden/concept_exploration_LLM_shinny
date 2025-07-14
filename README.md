@@ -3,9 +3,9 @@ This project is currently under active development and is being supervised by [D
 
 ## 1. Project Overview
 
-### 1.1. Objective
+### 1.1. Objective 
 
-The goal is to analyze linguistic data (e.g., cross-linguistic meanings and lexical groupings) using FCA and then **verify the resulting implications** through LLMs. These implications capture logical patterns such as:
+The first goal is to analyze linguistic data (e.g., cross-linguistic meanings and lexical groupings) using FCA and then **verify the resulting implications** through LLMs. These implications capture logical patterns such as:
 
 - **Attribute implications**:  
   > If a verb expresses meanings A and B, then it also expresses C.
@@ -14,6 +14,8 @@ The goal is to analyze linguistic data (e.g., cross-linguistic meanings and lexi
   > If meanings A and B co-occur in certain lexical items, they also appear in others.
 
 The system supports exploration and verification of **both types**, giving users full control over how they interrogate the conceptual structure of the data.
+
+The second goal is to utilize the generated data to create various semantic maps using different algorithms, such as randomized algorithms, and conduct a comparative study. This part of the project will be handled by my colleague, [Prathamesh Rane](https://github.com/prathameshrane08) [Repo will be shared soon]
 
 ### 1.2. Methodology
 
