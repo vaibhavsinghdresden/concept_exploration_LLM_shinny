@@ -78,7 +78,7 @@ Where X, Y ⊆ M. This means:
 
 These implications capture dependencies between attributes and can be used for reasoning and data compression. FCA provides tools to compute a minimal (canonical) set of such implications, known as the **Duquenne–Guigues basis**.
 
-**Attribute Exploration** is a procedure in which we ask a expert is this implication 𝑋 → 𝑌 valid? The expert then has two options. Either, the expert accepts 𝑋 → 𝑌 as a valid implication in the domain, or, he refutes the implication. In the latter case the expert is obliged to present a counter example in the “language” of the domain, i.e., an object described by the attributes from 𝑀 (initial context).
+> **Attribute Exploration** is a procedure in which we ask a expert is this implication 𝑋 → 𝑌 valid? The expert then has two options. Either, the expert accepts 𝑋 → 𝑌 as a valid implication in the domain, or, he refutes the implication. In the latter case the expert is obliged to present a counter example in the “language” of the domain, i.e., an object described by the attributes from 𝑀 (initial context).
 
 ### 1.4 Object Implications
 
