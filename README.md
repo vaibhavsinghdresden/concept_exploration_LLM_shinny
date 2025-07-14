@@ -143,7 +143,7 @@ While analogous to attribute implications, object implications are mainly explor
 
 > **Object Exploration** is also done in a similar manner as the attribute exploration .
 
-## 3 Data Description: Lexical Typology
+## 3. Data Description: Lexical Typology
 
 The dataset used in this project comes from the field of **Lexical Typology**, a branch of linguistic typology that studies how different languages categorize and lexicalize concepts across the **semantic space**.
 
@@ -173,8 +173,12 @@ A sample of the actual data used in our analysis is shown below.
 
 <img width="785" height="436" alt="Screenshot 2025-07-14 at 11 42 28 PM" src="https://github.com/user-attachments/assets/916fa77d-5c49-4d80-b599-103bb7ff520b" />
 
+## 4. UI Screenshots
 
+### 4.1 File Upload Page
+<img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 49 56 PM" src="https://github.com/user-attachments/assets/8d3fb5a3-2751-4a77-8bb7-f6d3babefb33" />
 
+The initial screen allows users to upload their context files to the system. Supported formats include Excel (.xlsx), CSV (.csv), and CXT (.cxt). Users can select a file from their device, which the system then processes for further analysis. The user can also select the number of rows and columns that should be used for analysis.
 
 
 
