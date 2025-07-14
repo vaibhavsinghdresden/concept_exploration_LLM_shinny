@@ -58,7 +58,7 @@ An example of a formal context and a concept lattice taken from [upriss.github.i
 
 <img width="381" height="472" alt="Screenshot 2025-07-14 at 10 43 31 PM" src="https://github.com/user-attachments/assets/c29b985a-2bab-4c02-a48b-a16a6c0d7b7b" />
 
-### Attribute Implications
+### 1.3 Attribute Implications
 
 An **attribute implication** is a rule of the form:
 
@@ -71,9 +71,8 @@ Where X, Y ⊆ M. This means:
 
 These implications capture dependencies between attributes and can be used for reasoning and data compression. FCA provides tools to compute a minimal (canonical) set of such implications, known as the **Duquenne–Guigues basis**.
 
----
 
-### Object Implications
+### 1.4 Object Implications
 
 **Object implications** are less commonly used and arise in the **dual** setting of FCA:
 
