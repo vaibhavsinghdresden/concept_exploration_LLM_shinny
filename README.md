@@ -225,16 +225,23 @@ When the system first loads in assisted mode, it displays an “Ask the Model”
 The system then gives the user several options:
 
 1. Confirm the response from the model
-1.1 If the model's response was that the implication is valid, then the implication will be added to confirmed implication section.
-1.2 If the model’s response includes a valid counterexample, it will be added to the context.
-1.3 If the counterexample is invalid, the system will notify the user.
+   - If the model's response was that the implication is valid, then the implication will be added to confirmed implication section.
+   - If the model’s response includes a valid counterexample, it will be added to the context.
+   - If the counterexample is invalid, the system will notify the user.
 2. Provide manual input, which functions the same as in manual mode.
 3. Chat with the model for further interaction.
 4. View the prompt that was sent to the model.
 
 <img width="1470" height="919" alt="Screenshot 2025-07-15 at 12 19 13 AM" src="https://github.com/user-attachments/assets/44a0ce92-5f23-4ead-ac8c-52e48fb952c1" />
 
+If the user selects the **Chat** option, they can engage with the model by asking questions like why a particular counterexample was chosen or requesting alternative counterexamples in different languages.  
 
+> **Important:** To ensure the system correctly interprets the model’s response as a valid counterexample, the user must instruct the model to:  
+> _"Can you give me the response in the same format as before?"_  
+
+This approach is intentional and carefully designed to balance flexibility and robustness. By default, chat responses are free-form text rather than structured JSON. This prevents the system from unnecessarily attempting to parse every model reply, which could lead to errors or misinterpretations when the response is conversational rather than data-driven. Parsing is only triggered when the user explicitly requests a machine-readable format, ensuring that the system processes only well-structured and intended inputs. This design minimizes overhead, reduces the risk of parsing failures, and provides a clearer, more controlled user experience.
+
+<img width="1470" height="919" alt="Screenshot 2025-07-15 at 12 34 02 AM" src="https://github.com/user-attachments/assets/a5c63e09-d698-46d3-910f-86e648d0378a" />
 
 
 
