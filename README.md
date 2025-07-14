@@ -30,6 +30,7 @@ Where:
 These satisfy the following conditions:
 
 A = { g ∈ G | ∀ m ∈ B: (g, m) ∈ I }
+
 B = { m ∈ M | ∀ g ∈ A: (g, m) ∈ I }
 
 
