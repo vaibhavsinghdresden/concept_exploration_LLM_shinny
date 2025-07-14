@@ -1,11 +1,11 @@
 # LLM-Enhanced Formal Concept Analysis: A Novel Approach to Semantic Mapping and Knowledge Discovery
 This project is currently under active development and is being supervised by [Dr. Sergei Obiedkov](https://iccl.inf.tu-dresden.de/web/Sergei_Obiedkov/en)
 
-## Background: Formal Concept Analysis (FCA)
+## 1. Background: Formal Concept Analysis (FCA)
 
 **Formal Concept Analysis (FCA)** is a mathematical framework for data analysis that focuses on identifying and visualizing relationships between a set of **objects** and a set of **attributes**. Developed by Rudolf Wille in the early 1980s, FCA is grounded in **lattice theory** and is widely used in knowledge representation, data mining, and ontology engineering.
 
-### Formal Context
+### 1.1 Formal Context
 
 Think of this as a simple table showing "what has what" - like a spreadsheet where rows are objects, columns are attributes, and checkmarks shows that this specific attribute is present in that object.
 
@@ -34,7 +34,7 @@ In this context the **Objects** are `girl`, `woman`, `boy`, `man` and the **Attr
 This setup defines a simple logical structure where each object can be classified by its gender and age. It allows us to explore patterns and relationships—like grouping all **juveniles**, all **females**, or all **adults**—based on shared attributes.
 
 
-### Formal Concepts
+### 1.2 Formal Concepts
 
 A **formal concept** is a pair:
 
