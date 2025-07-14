@@ -48,12 +48,13 @@ Three verification modes have been developed, each suited to different levels of
 
 By combining **formal logic from FCA** with the **reasoning abilities of LLMs**, this system offers a powerful toolkit for scalable, explainable, and interactive analysis of semantic structure in language data—supporting both **attribute** and **object exploration** modes.
 
+---
 
-## 1. Background: Formal Concept Analysis (FCA)
+## 2. Background: Formal Concept Analysis (FCA)
 
 **Formal Concept Analysis (FCA)** is a mathematical framework for data analysis that focuses on identifying and visualizing relationships between a set of **objects** and a set of **attributes**. Developed by Rudolf Wille in the early 1980s, FCA is grounded in **lattice theory** and is widely used in knowledge representation, data mining, and ontology engineering.
 
-### 1.1 Formal Context
+### 2.1 Formal Context
 
 Think of this as a simple table showing "what has what" - like a spreadsheet where rows are objects, columns are attributes, and checkmarks shows that this specific attribute is present in that object.
 
@@ -69,6 +70,7 @@ Where:
 
 For example concider the below formal concept which represents a small set of **person categories** based on their **gender** and **age group**.:
 
+
 |        Object        | Female | Male | Juvenile | Adult |
 |:--------------------:|:------:|:----:|:--------:|:-----:|
 | **girl**             |   ✔️   |      |    ✔️    |       |
@@ -78,12 +80,13 @@ For example concider the below formal concept which represents a small set of **
 
 ^Taken from [upriss.github.io](https://upriss.github.io/fca/fcaintro.html)
 
+
 In this context the **Objects** are `girl`, `woman`, `boy`, `man` and the **Attributes** are `female`, `male`, `juvenile`, `adult`. Each object is described by the attributes that apply to it, like A **girl** is **female** and **juvenile**
 
 This setup defines a simple logical structure where each object can be classified by its gender and age. It allows us to explore patterns and relationships—like grouping all **juveniles**, all **females**, or all **adults**—based on shared attributes.
 
 
-### 1.2 Formal Concepts
+### 2.2 Formal Concepts
 
 A **formal concept** is a pair:
 
@@ -114,7 +117,7 @@ For our example we get the below lattice daigram
 
 <img width="296" height="246" alt="Screenshot 2025-07-14 at 11 14 11 PM" src="https://github.com/user-attachments/assets/275c7df2-b9b0-4909-87fa-ac709e3ca703" />
 
-### 1.3 Attribute Implications and Attribute exploration 
+### 2.3 Attribute Implications and Attribute exploration 
 
 An **attribute implication** is a rule of the form:
 
@@ -128,7 +131,7 @@ These implications capture dependencies between attributes and can be used for r
 
 > **Attribute Exploration** is a procedure in which we ask a expert is this implication 𝑋 → 𝑌 valid? The expert then has two options. Either, the expert accepts 𝑋 → 𝑌 as a valid implication in the domain, or, he refutes the implication. In the latter case the expert is obliged to present a counter example in the “language” of the domain, i.e., an object described by the attributes from 𝑀 (initial context).
 
-### 1.4 Object Implications
+### 2.4 Object Implications
 
 **Object implications** are less commonly used and arise in the **dual** setting of FCA:
 
@@ -142,12 +145,13 @@ While analogous to attribute implications, object implications are mainly explor
 
 > **Object Exploration** is also done in a similar manner as the attribute exploration .
 
+---
 
-## 2. Data Description: Lexical Typology
+## 3.1. Data Description: Lexical Typology
 
 The dataset used in this project comes from the field of **Lexical Typology**, a branch of linguistic typology that studies how different languages categorize and lexicalize concepts across the **semantic space**.
 
-### 2.1 Context
+### 3.1 Context
 
 While:
 - **Phonological typology** focuses on the sound systems (phonemes) of languages
@@ -155,7 +159,7 @@ While:
 
 **Lexical typology** explores **how languages structure word meanings**, especially how they split or merge conceptual domains.
 
-### 2.2 Example: The Word *Thick*
+### 3.2 Example: The Word *Thick*
 
 In English, the adjective *thick* can describe:
 - Dimensional size (e.g., *thick wall*, *thick stick*)
@@ -167,12 +171,12 @@ However, in Russian, these meanings are split between two distinct words:
 
 This demonstrates how **semantic domains** are divided differently across languages.
 
-### 2.3 Application in Formal Concept Analysis (FCA)
+### 3.3 Example of actual dataset
 
-This project applies **Formal Concept Analysis** to analyze and model:
-- The relationships between **lexical items (objects)** and **semantic components (attributes)**
-- The structure of **cross-linguistic meaning patterns**
-- We build **concept lattices** showing how meanings group or diverge in different languages
+A sample of the actual data used in our analysis is shown below.
+
+<img width="785" height="436" alt="Screenshot 2025-07-14 at 11 42 28 PM" src="https://github.com/user-attachments/assets/916fa77d-5c49-4d80-b599-103bb7ff520b" />
+
 
 
 
