@@ -15,7 +15,7 @@ The primary goal is to analyze linguistic data (e.g., cross-linguistic meanings 
 
 The system supports exploration and verification of **both types**, giving users full control over how they interrogate the conceptual structure of the data.
 
-The second goal is to utilize the generated data to create various semantic maps using different algorithms, such as randomized algorithms, and conduct a comparative study. This part of the project will be handled by my colleague, [Prathamesh Rane](https://github.com/prathameshrane08) [Repo will be shared soon]
+The second goal is to utilize the generated data to create various semantic maps using different algorithms, such as randomized algorithms, and conduct a comparative study. This part of the project is being handled by my colleague, [Prathamesh Rane](https://github.com/prathameshrane08) [Repo will be shared soon]
 
 ### 1.2. Methodology
 
