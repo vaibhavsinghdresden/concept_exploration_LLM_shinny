@@ -3,7 +3,7 @@ This project is currently under active development and is being supervised by [D
 
 ## 1. Project Overview
 
-### 1.1 Objective
+### 1.1. Objective
 
 The goal is to analyze linguistic data (e.g., cross-linguistic meanings and lexical groupings) using FCA and then **verify the resulting implications** through LLMs. These implications capture logical patterns such as:
 
@@ -15,22 +15,22 @@ The goal is to analyze linguistic data (e.g., cross-linguistic meanings and lexi
 
 The system supports exploration and verification of **both types**, giving users full control over how they interrogate the conceptual structure of the data.
 
-### 1.2 Methodology
+### 1.2. Methodology
 
 The project follows a two-step process:
 
 1. **Formal Concept Analysis** is applied to lexical typology data to generate a set of implications (attribute-based and object-based).
 2. These implications are then validated by a **Large Language Model**, with support for various user interaction modes.
 
-### 1.3 Validation Modes
+### 1.3. Validation Modes
 
 Three verification modes have been developed, each suited to different levels of automation:
 
-#### 1.3.1 Manual Mode
+#### 1.3.1. Manual Mode
 - The user manually validates each implication using their own linguistic knowledge.
 - Ideal for experts seeking precise control.
 
-#### 1.3.2 Assisted Mode
+#### 1.3.2. Assisted Mode
 - The LLM provides proposed answers and justifications.
 - Users can **interactively chat** with the system:
   - Ask follow-up questions
@@ -38,7 +38,7 @@ Three verification modes have been developed, each suited to different levels of
   - Refine or explore counterexamples
 - Useful for guided, collaborative research.
 
-#### 1.3.3 Automated Mode
+#### 1.3.3. Automated Mode
 - Operates with minimal user input.
 - Automatically validates implications until:
   - All implications are resolved, or
@@ -52,7 +52,7 @@ By combining **formal logic from FCA** with the **reasoning abilities of LLMs**,
 
 **Formal Concept Analysis (FCA)** is a mathematical framework for data analysis that focuses on identifying and visualizing relationships between a set of **objects** and a set of **attributes**. Developed by Rudolf Wille in the early 1980s, FCA is grounded in **lattice theory** and is widely used in knowledge representation, data mining, and ontology engineering.
 
-### 2.1 Formal Context
+### 2.1. Formal Context
 
 Think of this as a simple table showing "what has what" - like a spreadsheet where rows are objects, columns are attributes, and checkmarks shows that this specific attribute is present in that object.
 
@@ -84,7 +84,7 @@ In this context the **Objects** are `girl`, `woman`, `boy`, `man` and the **Attr
 This setup defines a simple logical structure where each object can be classified by its gender and age. It allows us to explore patterns and relationships—like grouping all **juveniles**, all **females**, or all **adults**—based on shared attributes.
 
 
-### 2.2 Formal Concepts
+### 2.2. Formal Concepts
 
 A **formal concept** is a pair:
 
@@ -115,7 +115,7 @@ For our example we get the below lattice daigram
 
 <img width="296" height="246" alt="Screenshot 2025-07-14 at 11 14 11 PM" src="https://github.com/user-attachments/assets/275c7df2-b9b0-4909-87fa-ac709e3ca703" />
 
-### 2.3 Attribute Implications and Attribute exploration 
+### 2.3. Attribute Implications and Attribute exploration 
 
 An **attribute implication** is a rule of the form:
 
@@ -129,7 +129,7 @@ These implications capture dependencies between attributes and can be used for r
 
 > **Attribute Exploration** is a procedure in which we ask a expert is this implication 𝑋 → 𝑌 valid? The expert then has two options. Either, the expert accepts 𝑋 → 𝑌 as a valid implication in the domain, or, he refutes the implication. In the latter case the expert is obliged to present a counter example in the “language” of the domain, i.e., an object described by the attributes from 𝑀 (initial context).
 
-### 2.4 Object Implications
+### 2.4. Object Implications
 
 **Object implications** are less commonly used and arise in the **dual** setting of FCA:
 
@@ -147,7 +147,7 @@ While analogous to attribute implications, object implications are mainly explor
 
 The dataset used in this project comes from the field of **Lexical Typology**, a branch of linguistic typology that studies how different languages categorize and lexicalize concepts across the **semantic space**.
 
-### 3.1 Context
+### 3.1. Context
 
 While:
 - **Phonological typology** focuses on the sound systems (phonemes) of languages
@@ -155,7 +155,7 @@ While:
 
 **Lexical typology** explores **how languages structure word meanings**, especially how they split or merge conceptual domains.
 
-### 3.2 Example: The Word *Thick*
+### 3.2. Example: The Word *Thick*
 
 In English, the adjective *thick* can describe:
 - Dimensional size (e.g., *thick wall*, *thick stick*)
@@ -167,7 +167,7 @@ However, in Russian, these meanings are split between two distinct words:
 
 This demonstrates how **semantic domains** are divided differently across languages.
 
-### 3.3 Example of actual dataset
+### 3.3. Example of actual dataset
 
 A sample of the actual data used in our analysis is shown below.
 
@@ -175,10 +175,34 @@ A sample of the actual data used in our analysis is shown below.
 
 ## 4. UI Screenshots
 
-### 4.1 File Upload Page
+### 4.1. File Upload Page
 <img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 49 56 PM" src="https://github.com/user-attachments/assets/8d3fb5a3-2751-4a77-8bb7-f6d3babefb33" />
 
-The initial screen allows users to upload their context files to the system. Supported formats include Excel (.xlsx), CSV (.csv), and CXT (.cxt). Users can select a file from their device, which the system then processes for further analysis. The user can also select the number of rows and columns that should be used for analysis.
+The initial screen allows users to upload their context files to the system. Supported formats include Excel (.xlsx), CSV (.csv), and CXT (.cxt). Users can select a file from their device, which the system then processes for further analysis. 
+
+<img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 57 09 PM" src="https://github.com/user-attachments/assets/c3cdd222-f9fd-4ed2-9ad6-ece33075eda7" />
+
+The user can also select the number of rows and columns that should be used for analysis.
+
+### After the initial file upload, user can then select among attribute exploration or object exploration.
+
+### 4.2. Attribute Exploration
+
+#### 4.2.1 Manual Mode
+At first the system shows a implication (which can be selected from the right hand side, but shows the first implication by default)
+<img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 57 48 PM" src="https://github.com/user-attachments/assets/5962575e-1c57-41b1-aa91-f92e974c0db8" />
+
+If user confirmed implication it will be added to the confirmed implication section on the right hand side
+
+<img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 59 23 PM" src="https://github.com/user-attachments/assets/4526c904-eeb1-44ac-ba1c-923650a23632" />
+
+If the user rejects the implication, the system asks for a counter example, if the counter example is a valid counter example then the object will be added to the context else the relevant exception will be shown by the system
+
+<img width="1582" height="961" alt="Screenshot 2025-07-14 at 11 58 02 PM" src="https://github.com/user-attachments/assets/677fa2df-d254-4077-9316-ed2de6328b94" />
+
+#### 4.2.2 Assisted Mode
+
+#### 4.2.3 Auto Mode
 
 
 
