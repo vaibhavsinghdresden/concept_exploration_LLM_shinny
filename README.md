@@ -238,10 +238,11 @@ The system then gives the user several options:
 
 If the user selects the **Chat** option, they can engage with the model by asking questions like why a particular counterexample was chosen or requesting alternative counterexamples in different languages.  
 
-> **Important:** To ensure the system correctly interprets the model’s response as a valid counterexample, the user must instruct the model to:  
-> _"Can you give me the response in the same format as before?"_
+> **Important:** In chat mode, the system generates free-flowing, conversational responses by default, without attempting to automatically parse them as input for system integration. This approach supports flexible, natural interaction without incurring the overhead or risk of misinterpreting loosely structured output.
+> However, when the user identifies a counterexample during the conversation that they deem valid and worth incorporating, they must explicitly instruct the system to parse it by issuing a command such as:
+“Please parse the previous result to the system.”
 
-> This approach is intentional and carefully designed to balance flexibility and robustness. By default, chat responses are free-form text rather than structured JSON. This prevents the system from unnecessarily attempting to parse every model reply, which could lead to errors or misinterpretations when the response is conversational rather than data-driven. Parsing is only triggered when the user explicitly requests a machine-readable format, ensuring that the system processes only well-structured and intended inputs. This design minimizes overhead, reduces the risk of parsing failures, and provides a clearer, more controlled user experience.
+>This design ensures that only intentional, user-validated data is processed, maintaining system integrity and reducing parsing errors. It strikes a deliberate balance between conversational freedom and controlled data input, making the system both robust and user-directed.
 
 <img width="1470" height="919" alt="Screenshot 2025-07-15 at 12 34 02 AM" src="https://github.com/user-attachments/assets/a5c63e09-d698-46d3-910f-86e648d0378a" />
 
