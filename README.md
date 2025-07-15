@@ -147,7 +147,7 @@ While analogous to attribute implications, object implications are mainly explor
 
 ## 3. Data Description: Lexical Typology
 
-The dataset used in this project comes from the field of **Lexical Typology**, a branch of linguistic typology that studies how different languages categorize and lexicalize concepts across the **semantic space**.
+The targeted datasets that can be used by our system comes from the field of **Lexical Typology**, a branch of linguistic typology that studies how different languages categorize and lexicalize concepts across the **semantic space**.
 
 ### 3.1. Context
 
