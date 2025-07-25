@@ -187,6 +187,10 @@ A sample of the actual data used in our analysis is shown below.
 
 ## 4. System Overview
 
+### 4.0. System Architecture 
+
+<img width="1379" height="722" alt="Screenshot 2025-07-24 at 11 20 56 AM" src="https://github.com/user-attachments/assets/8828198e-6404-4f8e-801b-9eabf9efe473" />
+
 ### 4.1. File Upload Page
 
 The initial screen allows users to upload their context files to the system. Supported formats include Excel (.xlsx), CSV (.csv), and CXT (.cxt). Users can select a file from their device, which the system then processes for further analysis. 
