@@ -143,7 +143,7 @@ Respond with only a valid JSON object. Do not include markdown syntax (like trip
 
 def evaluate_prompt(prompt):
     try:
-        client = OpenAI(base_url="https://llm.scads.ai/v1", api_key="sk-SsE9pY-GlGryX0NH3driHw")
+        client = OpenAI(base_url="https://llm.scads.ai/v1", api_key="")
         models = []
         for model in client.models.list().data:
             models.append(model.id)
