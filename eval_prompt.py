@@ -142,13 +142,17 @@ Respond with only a valid JSON object. Do not include markdown syntax (like trip
     return prompt
 
 def evaluate_prompt(prompt):
-    
-    # Provide code to send this prompt to an LLM model
-    # Declare the clint object, for our experiments we used LLama3-80b and R1 models
-    
-    response = client.chat.completions.create(messages=prompt, model=model_name)
-    response_content = response.choices[0].message.content
-    return response_content
-
-
+    try:
+        client = OpenAI(base_url="https://llm.scads.ai/v1", api_key="sk-SsE9pY-GlGryX0NH3driHw")
+        models = []
+        for model in client.models.list().data:
+            models.append(model.id)
+        # model_name = "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+        model_name = "meta-llama/Llama-3.3-70B-Instruct"
+        response = client.chat.completions.create(messages=prompt, model=model_name)
+        response_content = response.choices[0].message.content
+        return response_content
+    except Exception as e:
+        return "CLIENT_ERROR"
+        print(e)
 
